@@ -10,9 +10,9 @@ if [ $? -eq 0 ]; then
         test-*)
             echo "⎈ test"
             ;;
-        # ops-*)
-        #     echo "⎈ ops"
-        #     ;;
+        ops-*)
+            echo "⎈ ops"
+            ;;
         *)
             echo "⎈ $current_context"
             ;;
