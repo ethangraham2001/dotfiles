@@ -8,3 +8,4 @@ vim.keymap.set("n", "<leader>pwd", ":lua print(vim.fn.expand(\"%:p:h\"))<CR>", o
 vim.keymap.set('n', '<leader>ne', vim.diagnostic.goto_next, { desc = "Go to next diagnostic" })
 vim.keymap.set('n', '<leader>pe', vim.diagnostic.goto_prev, { desc = "Go to previous diagnostic" })
 vim.keymap.set('n', '<leader>tt', ':TodoTelescope<cr>')
+vim.keymap.set('n', '<leader>gb', ':Gitsigns blame<cr>')
