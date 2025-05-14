@@ -1,4 +1,5 @@
 require("mason").setup()
+local navic = require("nvim-navic")
 require("mason-lspconfig").setup({
     ensure_installed = { "lua_ls", "clangd", "pyright", "ltex", "rust_analyzer",
     "gopls"},
@@ -7,6 +8,7 @@ require("mason-lspconfig").setup({
             "rust_analyzer",
             "pyright",
             "clangd",
+            "gopls",
         }
     }
 })
@@ -47,7 +49,8 @@ cmp.setup({
     })
 })
 
-local on_attach = function(_, _)
+local on_attach = function(client, bufnr)
+    navic.attach(client, bufnr)
     vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, {})
     vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, {})
     vim.keymap.set('n', 'gd', vim.lsp.buf.definition, {})
@@ -90,7 +93,6 @@ require("lspconfig").gopls.setup {
     on_attach = on_attach,
     settings = {
         gopls = {
-            disableInComments = true
         }
     }
 }

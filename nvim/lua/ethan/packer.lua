@@ -316,5 +316,9 @@ return require('packer').startup(function(use)
 	})
 
 	use "tamarin-prover/editors"
+    use {
+        "SmiteshP/nvim-navic",
+        requires = "neovim/nvim-lspconfig"
+    }
 
 end)
