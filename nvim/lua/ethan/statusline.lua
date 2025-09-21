@@ -28,17 +28,19 @@ require('lualine').setup {
   inactive_sections = {
     lualine_a = {},
     lualine_b = {},
-    lualine_c = {'filename'},
+    lualine_c = {
+      'filename',
+      { function() return require("nvim-navic").get_location() end, cond = function() return require("nvim-navic").is_available() end },
+    },
     lualine_x = {'location'},
     lualine_y = {},
     lualine_z = {}
   },
-  tabline = {},
-  winbar = {
+  tabline = {
     lualine_c = {
-      { function() return require("nvim-navic").get_location() end, cond = function() return require("nvim-navic").is_available() end },
     },
   },
+  winbar = {},
   inactive_winbar = {},
   extensions = {}
 }
