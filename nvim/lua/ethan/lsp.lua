@@ -1,3 +1,6 @@
+-- TODO: silence deprecation warnings temporarily.
+vim.deprecate = function() end
+
 require("mason").setup()
 local navic = require("nvim-navic")
 require("mason-lspconfig").setup({
