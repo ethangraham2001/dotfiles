@@ -20,7 +20,10 @@ require('lualine').setup {
   sections = {
     lualine_a = {'mode'},
     lualine_b = {'branch', 'diff', 'diagnostics'},
-    lualine_c = {'filename'},
+    lualine_c = {
+      'filename',
+      { function() return require("nvim-navic").get_location() end, cond = function() return require("nvim-navic").is_available() end },
+    },
     lualine_x = {'encoding', 'fileformat', 'filetype'},
     lualine_y = {'progress'},
     lualine_z = {'location'}
@@ -28,17 +31,13 @@ require('lualine').setup {
   inactive_sections = {
     lualine_a = {},
     lualine_b = {},
-    lualine_c = {
-      'filename',
-      { function() return require("nvim-navic").get_location() end, cond = function() return require("nvim-navic").is_available() end },
-    },
+    lualine_c = {'filename'},
     lualine_x = {'location'},
     lualine_y = {},
     lualine_z = {}
   },
   tabline = {
-    lualine_c = {
-    },
+    lualine_c = {},
   },
   winbar = {},
   inactive_winbar = {},
