@@ -4,6 +4,7 @@ require("conform").setup({
         cpp = { "clang_format" },
         rust = { "rustfmt" },
         terraform = { "terraform_fmt" },
+        ocaml = { "ocamlformat" },
     },
     format_on_save = true,
 })
