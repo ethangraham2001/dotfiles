@@ -1,6 +1,9 @@
 vim.g.mapleader = " "
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 
+-- Rounded windows.
+vim.o.winborder = 'rounded'
+
 vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<cr>", opts);
 vim.keymap.set("n", "<leader>d", ':lua vim.diagnostic.open_float(0, {scope="line"})<cr>')
 vim.keymap.set('n', '<leader>td', ':Telescope diagnostics bufnr=0<cr>')

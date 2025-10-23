@@ -20,7 +20,7 @@ vim.cmd[[
 ]]
 
 -- default colorscheme
-vim.cmd('colorscheme tokyonight-night');
+vim.cmd('colorscheme tokyonight-moon');
 
 function ColorScheme(scheme_name)
     vim.cmd('colorscheme ' .. scheme_name)

@@ -4,8 +4,7 @@ vim.deprecate = function() end
 require("mason").setup()
 local navic = require("nvim-navic")
 require("mason-lspconfig").setup({
-    ensure_installed = { "lua_ls", "clangd", "pyright", "ltex", "rust_analyzer",
-    "gopls"},
+    ensure_installed = { "lua_ls", "clangd", "ltex", "rust_analyzer", "gopls", "pyright" },
     automatic_enable = {
         exclude = {
             "rust_analyzer",
@@ -94,10 +93,10 @@ require("lspconfig").clangd.setup {
 -- GO
 require("lspconfig").gopls.setup {
     on_attach = on_attach,
-    settings = {
-        gopls = {
-        }
-    }
+    -- settings = {
+    --     gopls = {
+    --     }
+    -- }
 }
 
 -- rust with rust_analyzer
@@ -119,6 +118,12 @@ require("lspconfig").kotlin_language_server.setup{
 
 -- Python with pyright
 require("lspconfig").pyright.setup {
+    on_attach = on_attach,
+}
+
+
+-- OCaml wth ocamllsp
+require("lspconfig").ocamllsp.setup {
     on_attach = on_attach,
 }
 
