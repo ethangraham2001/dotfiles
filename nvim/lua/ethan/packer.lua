@@ -65,7 +65,10 @@ return require('packer').startup(function(use)
     -- use "Hitesh-Aggarwal/feline_one_monokai.nvim"
     -- END: Status Bar
 
-    use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
+    use(
+        { "nvim-treesitter/nvim-treesitter", branch = 'master', lazy = false, build = ":TSUpdate" }
+    )
+
 
     use {
         'nvim-telescope/telescope.nvim', tag = '0.1.4',
