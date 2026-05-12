@@ -53,6 +53,26 @@ return require('packer').startup(function(use)
         as = "tokyonight"
     })
 
+    -- ZEN MODE
+    use {
+        "folke/zen-mode.nvim",
+        config = function()
+            require("zen-mode").setup {
+                window = {
+                    width = 0.75,
+                    backdrop = 1,
+                },
+                plugins = {
+                    kitty = {
+                        enabled = true,
+                        font = "+4", -- adjust increment to your taste
+                    },
+                },
+            }
+            vim.keymap.set("n", "<leader>z", "<cmd>ZenMode<cr>", { desc = "Zen Mode" })
+        end,
+    }
+
     -- NIGHTFOX
     use "EdenEast/nightfox.nvim"
 
