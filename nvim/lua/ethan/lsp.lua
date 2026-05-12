@@ -7,6 +7,7 @@ require("mason-lspconfig").setup({
     ensure_installed = { "lua_ls", "clangd", "ltex", "rust_analyzer", "gopls", "pyright" },
     automatic_enable = {
         exclude = {
+            "lua_ls",
             "rust_analyzer",
             "pyright",
             "clangd",
